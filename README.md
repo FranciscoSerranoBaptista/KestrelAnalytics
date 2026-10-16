@@ -42,7 +42,7 @@ Each statistics method is checked against numpy, scipy, statsmodels and scikit-l
 ## The two kinds of data
 
 - **The research corpus** (works, chapters, ideas, concepts, traditions) is one connected graph. Centrality, communities, lineage and the embedding map apply here.
-- **The coaching data** is clinical, and each session is a small island by construction. Graph-shaped questions find nothing here. The questions go to tables, time windows and trajectories, under the floor and the consent gate.
+- **Clinical data** is analysed through tables, time windows and trajectories, under the floor and the consent gate.
 
 ## Where it is going
 
