@@ -2,7 +2,7 @@
 
 **Graph and population analytics for research on people.** KestrelAnalytics runs inside the [AquilaDB](https://github.com/FranciscoSerranoBaptista/AquilaDB) server. It finds structure in a research graph and patterns across a population of persons. It says "not yet" when the data cannot carry a claim.
 
-This repository is the public face of the project: the description, the screenshots and the public issues. The source code is private.
+This repository is the public face of the project: the description and the public issues. The source code is private.
 
 ## Heritage
 
