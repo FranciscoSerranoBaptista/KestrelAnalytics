@@ -2,11 +2,19 @@
 
 **Graph and population analytics for research on people.** KestrelAnalytics runs inside the [AquilaDB](https://github.com/FranciscoSerranoBaptista/AquilaDB) server. It finds structure in a research graph and patterns across a population of persons. It says "not yet" when the data cannot carry a claim.
 
+Built for [The Land Institute](https://landinstitute.vercel.app), research on how adults develop at work.
+
+<p align="center">
+  <img src="assets/kestrel-gaps.png" alt="A KestrelAnalytics run on the literature layer: 38 communities found, 0 stable enough to name, and a table of domain pairs that are close in meaning but rarely linked" width="820">
+</p>
+
+<p align="center"><em>A run on the literature layer (46,630 ideas from books): 0 of 38 communities are stable enough to name, and the domain pairs that are close in meaning but rarely linked.</em></p>
+
 This repository is the public face of the project: the description and the public issues. The source code is private.
 
 ## Heritage
 
-The API follows the shape of the [ArangoDB Graph Analytics Engine](https://docs.arangodb.com): load a graph, run an algorithm as a job, store the result on the vertices. KestrelAnalytics keeps that shape and adds what research on people needs: stability across runs, lineage over time, statistics on tables, a consent gate and a cohort floor on each output. Like AquilaDB, it contains no ArangoDB source code.
+The API follows the shape of the [ArangoDB Graph Analytics Engine](https://docs.arangodb.com): load a graph, run an algorithm as a job, store the result on the vertices. KestrelAnalytics keeps that shape and adds what research on people needs: stability across runs, lineage over time, statistics on tables, a consent gate and a cohort floor on each output that describes people. Like AquilaDB, it contains no ArangoDB source code.
 
 ## What it computes
 
@@ -19,7 +27,7 @@ The API follows the shape of the [ArangoDB Graph Analytics Engine](https://docs.
 - **Partition comparison:** two runs compared member by member.
 - **Embedding map:** a PCA or UMAP projection to 2-D, with a trust value for each vertex.
 
-**On a table of persons and sessions:**
+**On a table of persons and their records over time:**
 
 - `describe`, `frequencies`, `correlate` (Spearman, Kendall), `factor` (loadings, Cronbach's alpha).
 - `variance` (ICC and random-intercept mixed models, REML or ML) and `trend` (random-slope models over time).
@@ -32,7 +40,7 @@ Each statistics method is checked against numpy, scipy, statsmodels and scikit-l
 
 | Concern | A general-purpose analytics library | KestrelAnalytics |
 |---|---|---|
-| **Small groups** | The analyst must remember to hide small cells. | Each output on clinical data passes a cohort floor. Small levels and cells are pooled or suppressed. |
+| **Small groups** | The analyst must remember to hide small cells. | Each output on data about people passes a cohort floor. Small levels and cells are pooled or suppressed. |
 | **Consent** | Not modelled. | A person without consent is removed before the analysis starts. Their data shapes no community, embedding, model or fact. The gate fails closed. |
 | **Unstable patterns** | A community appears on each run. | Consensus runs measure stability. An unstable community is not a finding. |
 | **Change over time** | One snapshot. | Scheduled recipes run over time windows and link the windows by lineage. |
@@ -42,7 +50,7 @@ Each statistics method is checked against numpy, scipy, statsmodels and scikit-l
 ## The two kinds of data
 
 - **The research corpus** (works, chapters, ideas, concepts, traditions) is one connected graph. Centrality, communities, lineage and the embedding map apply here.
-- **Clinical data** is analysed through tables, time windows and trajectories, under the floor and the consent gate.
+- **Data about people** is analysed through tables, time windows and trajectories, under the floor and the consent gate.
 
 ## Where it is going
 
@@ -66,12 +74,12 @@ The next work supports the research console in [PeacockUI](https://github.com/Fr
 
 ## Status
 
-Ships with AquilaDB `v1.1.1`, the latest Aquila release (2026-10-12).
+Ships with AquilaDB 1.3 (November 2026).
 
 ## Issues
 
 Use the issues here for questions, ideas and collaboration requests. The working backlog is private.
 
-**Do not post personal, clinical or coaching data in an issue.** An issue is public. To report a vulnerability, see [SECURITY.md](SECURITY.md).
+**Do not post personal data in an issue.** An issue is public. To report a vulnerability, see [SECURITY.md](SECURITY.md).
 
 © 2026 Francisco Serrano Baptista. All rights reserved.
