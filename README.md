@@ -5,10 +5,10 @@
 Built for [The Land Institute](https://landinstitute.vercel.app), research on how adults develop at work.
 
 <p align="center">
-  <img src="assets/kestrel-gaps.png" alt="A KestrelAnalytics run on the literature layer: 38 communities found, 0 stable enough to name, and a table of domain pairs that are close in meaning but rarely linked" width="820">
+  <img src="assets/kestrel-gaps.png" alt="A report of one KestrelAnalytics run on the literature layer: 38 communities found, 0 stable enough to name, and a table of curated domain pairs that are close in meaning but rarely linked" width="820">
 </p>
 
-<p align="center"><em>A run on the literature layer (46,630 ideas from books): 0 of 38 communities are stable enough to name, and the domain pairs that are close in meaning but rarely linked.</em></p>
+<p align="center"><em>A report of one run on the literature layer (46,630 ideas from books): 0 of 38 communities are stable enough to name. Below, the pairs of curated domains that are close in meaning but rarely linked.</em></p>
 
 This repository is the public face of the project: the description and the public issues. The source code is private.
 
